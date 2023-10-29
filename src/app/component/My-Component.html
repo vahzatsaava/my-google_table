@@ -1,0 +1,30 @@
+<div>
+  <input type="text" placeholder="Имя таблицы" [(ngModel)]="tableName">
+  <button (click)="createTable()" class="action-button">Создать таблицу 4x4</button>
+  <p></p>
+</div>
+
+<div>
+  <input type="text" placeholder="Формула" [(ngModel)]="formula">
+  <input type="text" placeholder="Строка" [(ngModel)]="row">
+  <input type="number" placeholder="Номер столбца" [(ngModel)]="columnNumber">
+  <button (click)="createCell()" class="action-button">Создать ячейку</button>
+  <p></p>
+</div>
+
+<div>
+  <input type="number" placeholder="ID ячейки" [(ngModel)]="cellId">
+  <button (click)="updateCellValue()" class="action-button">Обновить значение ячейки</button>
+  <p></p>
+</div>
+
+<p></p>
+<div>
+  <button (click)="getAll()" class="action-button">Получить все результаты</button>
+  <h2>Результаты:</h2>
+  <ul>
+    <li *ngFor="let cell of cellModelResultInput">
+      {{cell.row}}{{cell.columnNumber}}-{{ cell.result }}
+    </li>
+  </ul>
+</div>
